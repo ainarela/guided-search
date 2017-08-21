@@ -1,0 +1,50 @@
+.b-tags-list {
+    display: flex;
+    min-height: 59px;
+    margin: 0 -3px;
+
+    flex-wrap: wrap;
+
+    .tag {
+        max-height: 47px;
+        margin: 6px 3px;
+
+        order: 2;
+        &.is-active {
+            .tag-btn {
+                color: $color-05;
+                background-color: $color-02;
+            }
+        }
+    }
+
+    .tag-btn {
+        box-sizing: border-box;
+        border: 1px solid $color-02;
+        border-radius: 25px;
+        padding: 12px 20px;
+        font-size: $base-fontsize;
+    }
+
+    // Show results 
+    .show-results & {
+        overflow: visible;
+        max-height: 44px;
+        .tag {
+            &.is-active {
+                order: 1;
+            }
+
+            &:not(.is-active) {
+                .tag-btn {
+                    opacity: 0;
+
+                    transition: opacity 250ms cubic-bezier(.4, 0, 1, 1);
+                }
+            }
+            .tag-btn {
+                pointer-events: none;
+            }
+        }
+    }
+}

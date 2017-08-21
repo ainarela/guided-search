@@ -1,0 +1,6 @@
+// Text formating and helpers
+
+@mixin title {
+	font-size: $base-fontsize;
+	font-weight: 700;
+}

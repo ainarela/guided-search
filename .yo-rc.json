@@ -1,0 +1,31 @@
+{
+  "generator-nikita": {
+    "name": "guided-search",
+    "private": true,
+    "template": "slim",
+    "custom": true,
+    "staticPageGenerator": "assemble",
+    "sassCompiler": "compass",
+    "features": [
+      "browserReset",
+      "svgBackgrounds",
+      "groupMediaQueries",
+      "gitinfos"
+    ],
+    "nikitaCssMixins": [
+      "centering",
+      "fixed-ratiobox",
+      "respond-to"
+    ],
+    "nikitaCssExtends": [
+      "a11y",
+      "cf"
+    ],
+    "formFramework": false,
+    "askBuildFolders": true,
+    "useBuildFolders": true,
+    "cleanBuildFolders": true,
+    "requirejsPathToBowerComponents": "../../bower_components/",
+    "requirejsPathToNodeModules": "../../node_modules/"
+  }
+}

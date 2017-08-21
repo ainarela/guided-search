@@ -1,0 +1,69 @@
+.b-search-results {
+    @include wrapper-width;
+
+    .search-results-title {
+        @include title;
+        opacity: 0;
+        padding: 24px 0;
+    }
+
+    .search-results-list {
+        flex-direction: row;
+        display: flex;
+        margin: 0 -6px 6px;
+
+        flex-wrap: wrap;
+    }
+
+    .search-results-item {
+        padding: 6px;
+
+        flex-basis: 50%;
+    }
+
+    .search-results-img {
+        opacity: 0;
+        height: auto;
+
+        transform: scale(0);
+        transform-origin: 50% 50% 0;
+    }
+
+    // Show results
+    .show-results & {
+        .search-results-title {
+            opacity: 1;
+
+            transition: opacity 400ms linear 650ms;
+        }
+
+        .search-results-img {
+            animation-name: PopIn;
+            animation-fill-mode: forwards;
+            animation-timing-function: linear;
+        }
+
+        @for $i from 1 through 8 {
+            .search-results-item:nth-child(#{$i}) {
+                .search-results-img {
+                    animation-duration: ($i*75) + 400ms;
+                    animation-delay: ($i*50) + 150ms;
+                }
+            }
+        }
+    }
+}
+
+
+@keyframes PopIn {
+    from {
+        opacity: 0;
+
+        transform: scale(0);
+    }
+    to {
+        opacity: 1;
+
+        transform: scale(1);
+    }
+}
